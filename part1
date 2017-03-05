@@ -1,0 +1,56 @@
+def x():
+    shape = raw_input ("(S = square, R = rectangle, T = triangle, E = Exit)" + "\n" + "Enter Data : ")
+    if (str(shape) == "S" or str(shape)== "s"):
+
+        a = raw_input ("row number : ")
+
+        i=0
+        print "\n" ,shape, a 
+        while i < int(a):
+
+            i=i+1
+
+            print "*"*int(a)
+        print "\n"
+        
+        return x()
+        
+
+    if (str(shape) == "R" or str (shape) == "r"):
+
+        b=raw_input ("row number : ")
+        c=raw_input ("column number : ")
+
+        m=0
+        print "\n", shape, b, c
+        
+        while m < int(b):
+            print "*"*int(c)
+            m=m+1
+        print "\n"
+            
+        return x()
+
+    if (str(shape) == "T" or str (shape) == "t"):
+        
+        e=raw_input ("row number : ")
+
+        p=1
+        print "\n", shape, "U", e 
+       
+        
+        while p <= int (e):
+            print "*"*int(p)
+            p=p+1
+        print "\n"
+        
+        return x()
+
+    if (str(shape) == "E" or str(shape) == "e"):
+        pass
+
+    else:
+        print "Wrong data, try again please"
+        return x()
+
+x()
