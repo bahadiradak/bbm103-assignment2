@@ -1,0 +1,67 @@
+def y():
+    number =raw_input("(1 = Finding Prime Numbers, 2 = Calculating combination of two numbers C(n,r),  Press 'E' = Exit)" + "\n" + "Write the operation number or exit for 'E' : ")    
+    
+    if (number=="1"):
+        print "\n"
+        
+        given =input("Untill which number do you want to find prime numbers : ")
+    
+        prime=[]
+        
+        for i in range(2,int(given)+1):
+            if i >1:
+                for j in range(2,i) :
+                    if (i%j) == 0 : # Herhangi bir sayinin baska bir sayiya gore modu varsa o sayiya tam bolunuyordur ve asal degildir.
+                        break
+                else:
+                    prime.append(i)
+        if (int(given)==2):
+            print "\n", "List of prime numbers till", given, "is", prime
+        if (int(given)>2):
+            print "\n","List of prime numbers till", given, "are", prime , "\n"
+        else:
+            print "\n", "Prime numbers start from two", "\n"
+            
+
+        return y()
+
+
+    if (number=="2"):
+        print "\n" ,"I will find C(n,r)" , "\n"
+        n =input("First number (n) : ")
+        r =input ("Second number (r) : ")
+
+        if (int(n)>int(r)):
+            
+            a=range (1,int(n)+1)
+
+            b=1
+            for i in a :
+                b=b*i
+
+            c=1
+            for j in range(1,int(r)+1):
+                c=c*j
+
+            d=1
+            g=int(n)-int(r)
+            for k in range(1,g+1):
+                d=d*k
+            
+            print "\n" ,"C(", n, ",", r, ") =", b/(c*d) , "\n"
+
+        else:
+            print " n must bigger than r"
+
+        return y()
+
+    
+    if (str(number)=="E" or str(number)=="e"):
+        pass
+
+
+    else:
+        print "Wrong data, try again please"
+        return y()
+     
+y()
